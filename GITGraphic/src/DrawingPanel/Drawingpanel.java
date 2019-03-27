@@ -42,11 +42,13 @@ public class Drawingpanel extends JPanel {
 	}
 	private void initDrawing(int x, int y){
 		this.currentTool.setOrigin(x,y);// 그림 그릴 준비를 한다
+		this.currentTool.setOriginPolygon(x,y);
 		this.drawShape();
 	}
 	private void keepDrawing(int x, int y){//마지막 점을 안찍고 계속 움직이는 점, 위치는 마우스 막 움직일떄 
 		this.drawShape();
 		this.currentTool.setPoint(x,y);
+		//this.currentTool.setOriginPolygon(x,y);
 		this.drawShape();
 	}
 	private void continueDrawing(int x, int y){//w중간점 찍는 함수. 
